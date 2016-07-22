@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Material</title>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<link href="hover.css" rel="stylesheet" media="all">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+	<script src="angular-route.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div layout="column" ng-cloak="" ng-app="materialApp" class="mainDiv">
+		<div class="toolbardemoBasicUsage" ng-controller="AppCtrl" layout="row">
+			<md-toolbar class="md-hue-2 header-shadow">
+		      	<div class="md-toolbar-tools">
+		        	<md-button class="md-icon-button" aria-label="Settings" ng-disabled="">
+		          		<md-icon md-svg-icon="img/icons/logo.svg"></md-icon>
+		        	</md-button>
+			        <h2>
+			         	<span>The Web Show</span>
+			        </h2>
+			        <span flex=""></span>
+			        <md-button class="md-icon-button" aria-label="Favorite" class="md-raised">
+			          	<md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+			        </md-button>
+			        <md-button class="md-icon-button" aria-label="More">
+			          	<md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+			        </md-button>
+		     	</div>
+		    </md-toolbar>	
+		</div>
+		<div class="sidenavdemoBasicUsage" ng-controller="SideNavCtrl" layout="row">
+			<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="" md-whiteframe="4" layout="column">
+				<md-toolbar class="md-tall header-shadow toolbar1" style="background-color:violet;">
+			      	<md-button class="md-toolbar-tools" layout="column" layout-align="center center">
+				      	Movies
+				    </md-button>
+			    </md-toolbar>
+			    <md-toolbar class="md-tall header-shadow toolbar2" style="background-color:indigo;">
+			    	<md-button class="md-toolbar-tools" layout="column" layout-align="center center">
+				      	TV
+				    </md-button>
+			    </md-toolbar>
+			    <!-- <md-toolbar class="md-tall header-shadow toolbar3" style="background-color:blue;">
+			    	<md-button class="md-toolbar-tools" layout="column" layout-align="center center">			Actors
+				    </md-button>
+			    </md-toolbar> -->
+			    <!-- <md-toolbar class="md-tall toolbar4" style="background-color:orange;">
+			    	<md-button class="md-toolbar-tools" layout="column" layout-align="center center">		
+			    		Follow Us
+				    </md-button>
+			    </md-toolbar> -->
+			</md-sidenav>
+			
+			<div flex layout="column" ng-view>
+				
+			</div>
+		</div>
+	</div>
+	<!-- https://api.themoviedb.org/3/movie/550?api_key=dcb9184c0fa834e428249a41f467c635 -->
+</body>
+</html>

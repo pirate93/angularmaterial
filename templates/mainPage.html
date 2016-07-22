@@ -1,0 +1,22 @@
+<div flex layout="column">
+	<div flex="50" layout="row">
+		<md-card flex="15" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-repeat="movie in movies | limitTo:6">
+	    	<img ng-src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}" style="height:75%!important;">
+	    	<md-card-title>
+	        	<md-card-title-text>
+	            	<span class="md-headline" layout="center center" style="font-size: 14px;">{{movie.title}}</span>
+	          	</md-card-title-text>
+	        </md-card-title>
+	  	</md-card>
+	</div>
+	<div flex="50" layout="row">
+		<md-card flex="15" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-repeat="tvShow in tvShows | limitTo:7" ng-if="tvShow.poster_path">
+	    	<img ng-src="https://image.tmdb.org/t/p/w154/{{tvShow.poster_path}}">
+	  	</md-card>
+	</div>
+	<!-- <div flex="33" layout="row">
+		<md-card flex="15" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-repeat="person in persons | limitTo:6">
+	    	<img ng-src="https://image.tmdb.org/t/p/w154/{{person.profile_path}}">
+	  	</md-card>
+	</div> -->
+</div>

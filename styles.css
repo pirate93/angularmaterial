@@ -1,0 +1,45 @@
+.toolbardemoBasicUsage{
+	min-height: 64px;
+}
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+  color: white; 
+}
+md-toolbar.md-default-theme.md-hue-2:not(.md-menu-toolbar), md-toolbar.md-hue-2:not(.md-menu-toolbar) {
+    background-color: rgb(250, 250, 250);
+    color: rgba(0, 0, 0, 0.71);
+}
+md-toolbar.md-hue-2:not(.md-menu-toolbar) {
+    background-color: #80CBC4;
+}
+.md-icon-button.md-button.md-ink-ripple{
+	padding-top: 0;
+}
+.header-shadow {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+md-sidenav {
+	z-index: 1;
+	height: 100%;
+	width: 200px;
+}
+.mainDiv{
+	height: 100%;
+}
+.sidenavdemoBasicUsage{
+	height: 100%;
+}
+md-toolbar.md-tall{
+	min-height: 50%;
+}
+.md-toolbar-tools{
+	min-height: 100%;
+}
+.toolbar2{
+	z-index: -5;
+}
+.toolbar3{
+	z-index: -10;
+}
+.toolbar4{
+	z-index: -15;
+}

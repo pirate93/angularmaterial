@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<base href="/">
 	<title>Angular Material</title>
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
 	<link rel="stylesheet" href="styles.css">
@@ -11,6 +12,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script> 
 	<script src="angular-route.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </head>
@@ -36,29 +38,48 @@
 		    </md-toolbar>	
 		</div>
 		<div class="sidenavdemoBasicUsage" ng-controller="SideNavCtrl" layout="row">
-			<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="" md-whiteframe="4" layout="column">
-				<md-toolbar class="md-tall header-shadow toolbar1" style="background-color:violet;">
-			      	<md-button class="md-toolbar-tools" layout="column" layout-align="center center">
-				      	Movies
-				    </md-button>
-			    </md-toolbar>
-			    <md-toolbar class="md-tall header-shadow toolbar2" style="background-color:indigo;">
-			    	<md-button class="md-toolbar-tools" layout="column" layout-align="center center">
-				      	TV
-				    </md-button>
-			    </md-toolbar>
-			    <!-- <md-toolbar class="md-tall header-shadow toolbar3" style="background-color:blue;">
-			    	<md-button class="md-toolbar-tools" layout="column" layout-align="center center">			Actors
-				    </md-button>
-			    </md-toolbar> -->
-			    <!-- <md-toolbar class="md-tall toolbar4" style="background-color:orange;">
-			    	<md-button class="md-toolbar-tools" layout="column" layout-align="center center">		
-			    		Follow Us
-				    </md-button>
-			    </md-toolbar> -->
+			<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="" md-whiteframe="4" layout="column" flex>
+				<md-list layout="column">
+			      	<md-subheader class="md-no-sticky textCenter firstHeader">Show</md-subheader>
+			      	<md-list-item>
+			        	<md-button class="md-raised md-primary buttoncolordefault" ng-class="movie" value="movie" ng-click="btnSelected($event)">Movies</md-button>
+			      	</md-list-item>
+			      	<md-list-item>
+			        	<md-button class="md-raised md-primary buttoncolordefault" ng-class="tvShow" value="tv" ng-click="btnSelected($event)">TV Shows</md-button>
+			      	</md-list-item>
+			      	<md-list-item>
+			        	<md-button class="md-raised md-primary buttoncolordefault" ng-class="person" value="person" ng-click="btnSelected($event)">People</md-button>
+			      	</md-list-item>
+			      	<md-subheader class="md-no-sticky textCenter secondHeader">Show Results By</md-subheader>
+			      	<md-list-item>
+			        	<md-button class="md-raised md-primary buttoncolordefault" ng-class="popular" value="popular" ng-click="categorySelected($event)">Popular</md-button>
+			      	</md-list-item>
+			      	<md-list-item>
+			        	<md-button class="md-raised md-primary buttoncolordefault" ng-class="topRated" value="top_rated" ng-click="categorySelected($event)" ng-disabled="select==='person'">Top Rated</md-button>
+			      	</md-list-item>
+			      	<md-subheader class="md-no-sticky textCenter thirdHeader">Follow Us</md-subheader>
+			      	<md-list-item flex layout="row">
+			        	<md-button flex="33" class="md-icon-button" aria-label="Settings" ng-disabled="">
+		          			<ng-md-icon icon="facebook-box" style="fill:#3b5998"></ng-md-icon>
+		        		</md-button>
+		        		<md-button flex="33" class="md-icon-button" aria-label="Settings" ng-disabled="">
+		          			<ng-md-icon icon="twitter" style="fill:#55acee"></ng-md-icon>
+		        		</md-button>
+		        		<md-button flex="33" class="md-icon-button" aria-label="Settings" ng-disabled="">
+		          			<ng-md-icon icon="google-plus-box" style="fill:#dd4b39"></ng-md-icon>
+		        		</md-button>
+			      	</md-list-item>
+			 	</md-list>
+			 	<md-divider></md-divider>
+		 		<div id="license-footer" flex class="ng-binding textCenter">
+		          	<span>©2016</span><br>
+		          	<span>Code licensed under the</span><br>	<a href="./license">MIT License</a>.
+		          	Documentation licensed <br>under
+		          	<a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+		        </div>
 			</md-sidenav>
 			
-			<div flex layout="column" ng-view>
+			<div flex layout="column" ng-view class="mainClass">
 				
 			</div>
 		</div>

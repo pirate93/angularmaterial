@@ -1,6 +1,25 @@
-<div flex layout="column">
-	<div flex="50" layout="row">
-		<md-card flex="15" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-repeat="movie in movies | limitTo:6">
+<div flex layout="column" layout-padding>
+	<div flex="100" layout="row" layout-wrap class="marginForMainContent">
+		<md-card flex="20" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-repeat="show in shows | limitTo:20">
+	    	<img ng-if="show.poster_path" ng-src="https://image.tmdb.org/t/p/w154/{{show.poster_path}}" style="height:75%!important;" class="md-card-image">
+	    	<img ng-if="show.profile_path" ng-src="https://image.tmdb.org/t/p/w154/{{show.profile_path}}" style="height:75%!important;" class="md-card-image">
+	    	<div flex layout="column" layout-align="center center" class="cardTitle">
+	    		<span ng-if="show.title" class="md-headline" layout="center center" style="font-size: 14px;">{{show.title}}</span>
+            	<span ng-if="show.name" class="md-headline" layout="center center" style="font-size: 14px;">{{show.name}}</span>
+            	</a>
+	    	</div>
+	    	<!-- <md-card-title layout="column" layout-align="center center">
+	        	<md-card-title-text class="cardTitle" flex="100">
+	        		<a>
+	            	<span ng-if="show.title" class="md-headline" layout="center center" style="font-size: 14px;">{{show.title}}</span>
+	            	<span ng-if="show.name" class="md-headline" layout="center center" style="font-size: 14px;">{{show.name}}</span>
+	            	</a>
+	          	</md-card-title-text>
+	        </md-card-title> -->
+	  	</md-card>
+	</div>
+	<!-- <div flex="50" layout="row" layout-wrap>
+		<md-card flex="15" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-repeat="movie in movies | limitTo:20">
 	    	<img ng-src="https://image.tmdb.org/t/p/w154/{{movie.poster_path}}" style="height:75%!important;">
 	    	<md-card-title>
 	        	<md-card-title-text>
@@ -8,12 +27,12 @@
 	          	</md-card-title-text>
 	        </md-card-title>
 	  	</md-card>
-	</div>
-	<div flex="50" layout="row">
+	</div> -->
+	<!-- <div flex="50" layout="row">
 		<md-card flex="15" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-repeat="tvShow in tvShows | limitTo:7" ng-if="tvShow.poster_path">
 	    	<img ng-src="https://image.tmdb.org/t/p/w154/{{tvShow.poster_path}}">
 	  	</md-card>
-	</div>
+	</div> -->
 	<!-- <div flex="33" layout="row">
 		<md-card flex="15" md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="" ng-repeat="person in persons | limitTo:6">
 	    	<img ng-src="https://image.tmdb.org/t/p/w154/{{person.profile_path}}">
